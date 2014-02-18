@@ -45,6 +45,7 @@ $RECYCLE.BIN/
 .gradle
 bin/
 tmp/
+build/
 *.tmp
 *.bak
 *.swp
