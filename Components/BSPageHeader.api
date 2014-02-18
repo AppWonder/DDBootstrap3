@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="DDBSPageHeader" wocomponentcontent="false">    <binding name="title"/>
+        <validation message="'title' is a required binding.">
+            <unbound name="title"/>
+        </validation>
+        <binding name="subtext"/>
+    </wo>
+</wodefinitions>
