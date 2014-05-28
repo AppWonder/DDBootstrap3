@@ -1,0 +1,11 @@
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    Edit <wo:string value="$displayStringForSelection" /> <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+  <li><wo:hyperlink action="$selectCurrentItem"><wo:string value="$^noSelectionString" /></wo:hyperlink></li>
+  <li class="divider"></li>
+<wo:repetition list="$^list" item="$^item"><li><wo:hyperlink action="$selectCurrentItem"><wo:string value="$displayString" /></wo:hyperlink></li></wo:repetition>
+
+  </ul>
+</div>
