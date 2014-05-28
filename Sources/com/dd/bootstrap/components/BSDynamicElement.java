@@ -7,7 +7,6 @@ import com.webobjects.appserver.WOResponse;
 import com.webobjects.foundation.NSDictionary;
 import com.webobjects.foundation.NSMutableArray;
 
-import er.extensions.appserver.ERXResponseRewriter;
 import er.extensions.components.ERXDynamicElement;
 
 public class BSDynamicElement extends ERXDynamicElement {
@@ -17,10 +16,7 @@ public class BSDynamicElement extends ERXDynamicElement {
 	}
 
 	public void appendToResponse(WOResponse response, WOContext context) {
-		ERXResponseRewriter.addStylesheetResourceInHead(response, context, BSComponent.FRAMEWORK_NAME, "css/bootstrap.min.css");
-		ERXResponseRewriter.addScriptResourceInHead(response, context, BSComponent.FRAMEWORK_NAME, "js/jquery.min.js");
-		ERXResponseRewriter.addScriptResourceInHead(response, context, BSComponent.FRAMEWORK_NAME, "js/bootstrap.min.js");
-		
+		BSComponent.InjectCSSAndJS(response, context);
 		super.appendToResponse(response, context);
 	}
 	

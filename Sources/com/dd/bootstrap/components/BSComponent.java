@@ -19,16 +19,19 @@ public class BSComponent extends ERXStatelessComponent {
 	private static final long serialVersionUID = 1L;
 	
 	public static final String FRAMEWORK_NAME = "DDBootstrap3";
+	
+	public static void InjectCSSAndJS(WOResponse response, WOContext context) {
+		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "css/bootstrap.min.css");
+		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "js/jquery.min.js");
+		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "js/bootstrap.min.js");
+	}
 
 	public BSComponent(WOContext context) {
 		super(context);
 	}
 	
 	public void appendToResponse(WOResponse response, WOContext context) {
-		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "css/bootstrap.min.css");
-		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "js/jquery.min.js");
-		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "js/bootstrap.min.js");
-		
+		BSComponent.InjectCSSAndJS(response, context);
 		super.appendToResponse(response, context);
 	}
 
