@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="BSNavigationBar" wocomponentcontent="false">    <binding name="title"/>
+    <binding name="list"/>
+        <validation message="'list' is a required binding.">
+            <unbound name="list"/>
+        </validation>
+        <binding name="item"/>
+        <validation message="'item' is a required binding.">
+            <unbound name="item"/>
+        </validation>
+        <binding name="defaultItem"/>
+        <validation message="'defaultItem' is a required binding.">
+            <unbound name="defaultItem"/>
+        </validation>
+    <binding name="delegate"/>
+    </wo>
+</wodefinitions>
