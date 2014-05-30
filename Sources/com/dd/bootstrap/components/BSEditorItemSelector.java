@@ -9,6 +9,11 @@ public class BSEditorItemSelector extends BSComponent {
         super(context);
     }
 
+    public WOActionResults selectNull() {
+    	setValueForBinding(null, "selection");
+		return null;
+    }
+    
 	public WOActionResults selectCurrentItem() {
 		setValueForBinding(valueForBinding("item"), "selection");
 		return null;
