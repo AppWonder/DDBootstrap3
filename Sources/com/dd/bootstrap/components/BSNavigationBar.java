@@ -26,6 +26,7 @@ public class BSNavigationBar extends BSComponent {
 	 */
 	public static class Item {
 		public String title;
+		public Object tag;
 		public Item() {}
 		public Item(String title) { this.title = title; }
 		public WOActionResults action() { return null; }
