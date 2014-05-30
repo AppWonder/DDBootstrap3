@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="BSEditorRowStreetAndNo" wocomponentcontent="false">    <binding name="street"/>
+        <validation message="'street' is a required binding.">
+            <unbound name="street"/>
+        </validation>
+        <binding name="houseNo"/>
+        <validation message="'houseNo' is a required binding.">
+            <unbound name="houseNo"/>
+        </validation>
+    <binding name="label"/>
+    </wo>
+</wodefinitions>

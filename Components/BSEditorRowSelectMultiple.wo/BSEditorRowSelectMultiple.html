@@ -1,0 +1,10 @@
+<div class="form-group">
+	<label class="col-sm-2 control-label"><wo:str value="$^label" /></label>
+	<div class="col-sm-10">
+		<wo:if condition="$^list.count"><wo:loop list="$^list" item="$^item" index="$index">
+			<div class="checkbox">
+				<label><wo:checkBox class="$^class" id="$id" name="$elementName" selection="$selection" disabled="$^disabled" value="$^item" /> <wo:str value="$^displayString" valueWhenEmpty="$^item" /></label>
+			</div>
+		</wo:loop></wo:if>
+	</div>
+</div>

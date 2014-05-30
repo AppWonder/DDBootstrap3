@@ -11,8 +11,13 @@ import er.extensions.components.ERXDynamicElement;
 
 public class BSDynamicElement extends ERXDynamicElement {
 
+	public static void InjectCSSAndJS(WOResponse response, WOContext context) {
+		BSComponent.InjectCSSAndJS(response, context);
+	}
+	
 	public BSDynamicElement(String name, NSDictionary<String, WOAssociation> associations, NSMutableArray<WOElement> children) {
 		super(name, associations, children);
+		
 	}
 
 	public void appendToResponse(WOResponse response, WOContext context) {

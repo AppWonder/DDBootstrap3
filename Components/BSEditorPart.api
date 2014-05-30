@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="BSEditorPart" wocomponentcontent="true">    <binding name="title"/>
+        <validation message="'title' is a required binding.">
+            <unbound name="title"/>
+        </validation>
+        <binding name="subtitle"/>
+    </wo>
+</wodefinitions>

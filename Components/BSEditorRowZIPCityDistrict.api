@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="BSEditorRowZIPCityDistrict" wocomponentcontent="false">    <binding name="label"/>
+        <binding name="zip"/>
+        <validation message="'zip' is a required binding.">
+            <unbound name="zip"/>
+        </validation>
+        <binding name="city"/>
+        <validation message="'city' is a required binding.">
+            <unbound name="city"/>
+        </validation>
+        <binding name="district"/>
+        <validation message="'district' is a required binding.">
+            <unbound name="district"/>
+        </validation>
+    </wo>
+</wodefinitions>

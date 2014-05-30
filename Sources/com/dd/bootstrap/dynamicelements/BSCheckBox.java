@@ -11,13 +11,14 @@ import com.webobjects.foundation.NSDictionary;
 import er.extensions.appserver.ERXResponseRewriter;
 
 public class BSCheckBox extends WOCheckBox {
+	
 	private WOAssociation label;
-	public BSCheckBox(String aName,
-			NSDictionary<String, WOAssociation> someAssociations,
-			WOElement template) {
+	
+	public BSCheckBox(String aName, NSDictionary<String, WOAssociation> someAssociations, WOElement template) {
 		super(aName, someAssociations, template);
 		label = _associations.removeObjectForKey("label");
-		BSTextField.appendCSS(_associations, this);
+		
+		BSDynamicElementsHelper.AppendCSS(_associations, this);
 	}
 	
 	public void appendToResponse(WOResponse response, WOContext context) {
