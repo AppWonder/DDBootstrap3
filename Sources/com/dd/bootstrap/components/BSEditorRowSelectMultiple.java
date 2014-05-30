@@ -1,9 +1,11 @@
 package com.dd.bootstrap.components;
 
 import com.webobjects.appserver.WOContext;
-import com.webobjects.appserver.WOResponse;
 import com.webobjects.foundation.NSArray;
 import com.webobjects.foundation.NSMutableArray;
+
+// Further optimization with this plugin
+// http://davidstutz.github.io/bootstrap-multiselect/
 
 public class BSEditorRowSelectMultiple extends BSComponent {
     
@@ -40,6 +42,7 @@ public class BSEditorRowSelectMultiple extends BSComponent {
 	}
     
     // accesors
+	@SuppressWarnings("rawtypes")
 	private NSArray selections() {
     	return (NSArray) valueForBinding(Bindings.selections);
     }
@@ -53,7 +56,8 @@ public class BSEditorRowSelectMultiple extends BSComponent {
     	return selections().contains(item()) ? item() : null;
     }
     
-    public void setSelection(Object value) {
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	public void setSelection(Object value) {
      	NSMutableArray selections = (selections() != null) ? selections().mutableClone() : new NSMutableArray();
     	if (value != null) {
     		selections.addObject(item());
