@@ -1,0 +1,10 @@
+.vcenter {
+	display: table-cell !important;
+	vertical-align: middle;
+	float: none;
+}
+
+.vcenter > p:first-child {
+	padding-top: 7px;
+	margin: 0;
+}
