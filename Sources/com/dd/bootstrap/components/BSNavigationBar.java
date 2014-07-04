@@ -1,7 +1,10 @@
 package com.dd.bootstrap.components;
 
 import com.webobjects.appserver.WOActionResults;
+import com.webobjects.appserver.WOApplication;
+import com.webobjects.appserver.WOComponent;
 import com.webobjects.appserver.WOContext;
+import com.webobjects.foundation.NSArray;
 
 /**
  * BSNavigationBar
@@ -29,7 +32,13 @@ public class BSNavigationBar extends BSComponent {
 		public Object tag;
 		public Item() {}
 		public Item(String title) { this.title = title; }
-		public WOActionResults action() { return null; }
+		public NSArray<Item> childItems(){ return NSArray.emptyArray();}
+		public WOActionResults action(WOContext context) { return null; }
+		
+		@SuppressWarnings("unchecked")
+		public <T extends WOComponent> T pageWithName(Class<T> componentClass, WOContext context) {
+			    return (T)WOApplication.application().pageWithName(componentClass.getName(), context);
+		}
 	}
 	
 	
@@ -75,7 +84,7 @@ public class BSNavigationBar extends BSComponent {
 		setValueForBinding(item, "selection");
 		if (delegate() != null) {
 			delegate().navigationBarItemOnSelect(this, item);
-			return item.action();
+			return item.action(context());
 		}
 		return null;
 	}
@@ -89,7 +98,7 @@ public class BSNavigationBar extends BSComponent {
 		if (canGetValueForBinding("defaultItem")) {
 			Item item = (Item) valueForBinding("defaultItem");
 			if (item != null) {
-				return item.action();
+				return item.action(context());
 			}
 		}
 		

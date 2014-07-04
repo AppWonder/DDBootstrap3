@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+        <wo class="BSSmartEditorRow.java" wocomponentcontent="false">
+
+        <binding name="genericRecord"/>
+        <validation message="'genericRecord' is a required binding.">
+            <unbound name="genericRecord"/>
+        </validation>
+    <binding name="key"/>
+    </wo>
+</wodefinitions>

@@ -22,6 +22,11 @@ public class BSDynamicElementsHelper {
 			associations.setObjectForKey(WOAssociation.associationWithValue("btn btn-primary"), "class");
 		} else if (element instanceof BSEditorRowTextarea) {
 			associations.setObjectForKey(WOAssociation.associationWithValue("form-control"), "class");
+		} else if (element instanceof BSPopUpButton) {
+			associations.setObjectForKey(WOAssociation.associationWithValue("chosen-select"), "class");
+		}
+		else if (element instanceof BSBrowser) {
+			associations.setObjectForKey(WOAssociation.associationWithValue("chosen-select"), "class");
 		}
 	}
 	
