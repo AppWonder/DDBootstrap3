@@ -22,8 +22,8 @@ public class BSPopUpButton extends WOPopUpButton {
 	
 	public void appendToResponse(WOResponse response, WOContext context) {
 		BSDynamicElement.InjectCSSAndJS(response, context);
-		ERXResponseRewriter.addStylesheetResourceInHead(response, context, BSComponent.FRAMEWORK_NAME, "css/chosen.min.css");
-		ERXResponseRewriter.addScriptResourceInHead(response, context, BSComponent.FRAMEWORK_NAME, "js/chosen.jquery.min.js");
+		//ERXResponseRewriter.addStylesheetResourceInHead(response, context, BSComponent.FRAMEWORK_NAME, "css/chosen.min.css");
+		//ERXResponseRewriter.addScriptResourceInHead(response, context, BSComponent.FRAMEWORK_NAME, "js/chosen.jquery.min.js");
 		super.appendToResponse(response, context);
 	}
 }

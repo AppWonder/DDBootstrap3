@@ -23,8 +23,12 @@ public class BSComponent extends ERXStatelessComponent {
 	public static void InjectCSSAndJS(WOResponse response, WOContext context) {
 		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "css/bootstrap.min.css");
 		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "css/bootstrap.custom.css");
+		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "select2/select2.css");
+		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "select2/select2-bootstrap.css");
 		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "js/jquery.min.js");
 		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "js/bootstrap.min.js");
+		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "select2/select2.min.js");
+		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "select2/select2_main.js");
 	}
 
 	public BSComponent(WOContext context) {
