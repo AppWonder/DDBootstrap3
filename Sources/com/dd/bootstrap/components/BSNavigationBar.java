@@ -8,6 +8,7 @@ import com.webobjects.appserver.WOComponent;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOResponse;
 import com.webobjects.foundation.NSArray;
+import com.webobjects.foundation.NSMutableArray;
 
 import er.extensions.foundation.ERXStringUtilities;
 
@@ -35,14 +36,18 @@ public class BSNavigationBar extends BSComponent {
 	public static class Item {
 		public String title;
 		public Object tag;
+		public NSMutableArray<Item> childItems = new NSMutableArray<Item>();
 		public Item() {}
 		public Item(String title) { this.title = title; }
-		public NSArray<Item> childItems(){ return NSArray.emptyArray();}
 		public WOActionResults action(WOContext context) { return null; }
 		
 		@SuppressWarnings("unchecked")
 		public <T extends WOComponent> T pageWithName(Class<T> componentClass, WOContext context) {
 			    return (T)WOApplication.application().pageWithName(componentClass.getName(), context);
+		}
+		
+		public boolean hasChildItems() {
+			return childItems != null && !childItems.isEmpty();
 		}
 	}
 	
@@ -80,10 +85,17 @@ public class BSNavigationBar extends BSComponent {
 	 */
 	public String cssClassLiItem() {
 		Item item = (Item) valueForBinding("item");
+		NSMutableArray<String> entries = new NSMutableArray<String>();
+		
 		if (delegate() != null && delegate().navigationBarItemIsSelected(this, item)) {
-			return "active";
+			entries.addObject("active");
 		}
-		return null;
+		
+		if (item.hasChildItems()) {
+			entries.addObject("dropdown");
+		}
+		
+		return entries.isEmpty() ? null : entries.componentsJoinedByString(" ");
 	}
 	
 
