@@ -38,12 +38,14 @@ public class BSSmartEditorRow extends BSComponent {
     		return ObjectUtils.toString(value);
 	}
 	
-	public void setValueForAttributeKey(String value){
+	public void setValueForAttributeKey(Object value){
 
 		try{
 			Object _value = value;
-			if(formatter()!=null){
-				_value = formatter().parseObject(value);
+			if(formatter() != null) {
+				if (value instanceof String) {
+					_value = formatter().parseObject((String) value);
+				}
 			}
 			genericRecord().takeValueForKey(_value, key());
 			
@@ -177,7 +179,11 @@ public class BSSmartEditorRow extends BSComponent {
 
 																	};
 	public Format formatter(){
-		if(Double.class.getName().equals(attributeForAttributeKey().valueTypeClassName())||Integer.class.getName().equals(attributeForAttributeKey().valueTypeClassName())){
+		if (attributeForAttributeKey() == null) { return null; }
+		
+		String valueTypeClassName = attributeForAttributeKey().valueTypeClassName();
+		
+		if(Double.class.getName().equals(valueTypeClassName) || Integer.class.getName().equals(valueTypeClassName)) {
 			return UNSCALED_NUMBER_FORMATTER;
 		}
 
