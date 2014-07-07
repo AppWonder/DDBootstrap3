@@ -1,10 +1,15 @@
 package com.dd.bootstrap.components;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOApplication;
 import com.webobjects.appserver.WOComponent;
 import com.webobjects.appserver.WOContext;
+import com.webobjects.appserver.WOResponse;
 import com.webobjects.foundation.NSArray;
+
+import er.extensions.foundation.ERXStringUtilities;
 
 /**
  * BSNavigationBar
@@ -53,6 +58,8 @@ public class BSNavigationBar extends BSComponent {
 	}
 	
 	
+	private String _navbarElementID;
+	
 	/**
 	 * Constructor
 	 * @param context
@@ -61,6 +68,11 @@ public class BSNavigationBar extends BSComponent {
         super(context);
     }
 	
+	@Override
+	public void appendToResponse(WOResponse response, WOContext context) {
+		super.appendToResponse(response, context);
+		_navbarElementID = null;
+	}
 	
 	/**
 	 * Returns "active" when the delegate says it's selected
@@ -103,6 +115,20 @@ public class BSNavigationBar extends BSComponent {
 		}
 		
 		return null;
+	}
+	
+	
+	/**
+	 * Returns the navigation-bar's DOM element ID for this component.
+	 * @return DOM element id
+	 */
+	public String navbarElementID() {
+		if (ERXStringUtilities.isBlank(_navbarElementID)) {
+			// We have to replace all "." chars by "-" otherwise it won't work
+			// as a DOM selector at all.
+			_navbarElementID = "navbar-" + StringUtils.replace(context().elementID(), ".", "-");
+		}
+		return _navbarElementID;
 	}
 	
 	

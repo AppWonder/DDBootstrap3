@@ -2,24 +2,23 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <!-- fixme id data-target -->
+      <wo:genericContainer elementName="button" type="button" class="navbar-toggle" data-toggle="collapse" data-target="~\"#\" + navbarElementID">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </button>
+      </wo:genericContainer>
       <wo:link action="$selectDefaultItem" class="navbar-brand"><wo:str value="$^defaultItem.title" valueWhenEmpty="Brand" /></wo:link>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> <!-- fixme id -->
+    <wo:genericContainer elementName="div" class="collapse navbar-collapse" id="$navbarElementID">
       <ul class="nav navbar-nav">
         <!-- <li class="active"><a href="#">Link</a></li>-->
         <wo:loop list="$^list" item="$^item"><wo:genericContainer elementName="li" class="$cssClassLiItem">
         	<wo:link action="$selectItem"><wo:str value="$^item.title" valueWhenEmpty="null" /></wo:link>
         </wo:genericContainer></wo:loop>
       </ul>
-      
-    </div><!-- /.navbar-collapse -->
+    </wo:genericContainer><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
