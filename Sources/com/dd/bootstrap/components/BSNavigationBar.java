@@ -108,9 +108,8 @@ public class BSNavigationBar extends BSComponent {
 		setValueForBinding(item, "selection");
 		if (delegate() != null) {
 			delegate().navigationBarItemOnSelect(this, item);
-			return item.action(context());
 		}
-		return null;
+		return item.action(context());
 	}
 	
 
