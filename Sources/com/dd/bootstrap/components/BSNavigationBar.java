@@ -40,6 +40,8 @@ public class BSNavigationBar extends BSComponent {
 		public Item() {}
 		public Item(String title) { this.title = title; }
 		public WOActionResults action(WOContext context) { return null; }
+		public String href;
+		public String hrefTarget;
 		
 		@SuppressWarnings("unchecked")
 		public <T extends WOComponent> T pageWithName(Class<T> componentClass, WOContext context) {
@@ -48,6 +50,10 @@ public class BSNavigationBar extends BSComponent {
 		
 		public boolean hasChildItems() {
 			return childItems != null && !childItems.isEmpty();
+		}
+		
+		public boolean hasHref() {
+			return StringUtils.isNotBlank(href);
 		}
 	}
 	
