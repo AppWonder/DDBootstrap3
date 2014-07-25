@@ -1,0 +1,12 @@
+<div class="container">
+	<h3>
+		<wo:genericContainer elementName="a" data-toggle="collapse" href="$~\"#\" + collapsibleID">
+			<wo:str value="$^title" /><wo:if condition="$^subtitle"> <small><wo:str value="$^subtitle" /></small></wo:if>
+		</wo:genericContainer>
+	</h3>
+    <wo:genericContainer elementName="div" id="$collapsibleID" class="panel-collapse collapse">
+    	<div class="panel-body">
+        	<wo:componentContent />
+		</div>
+    </wo:genericContainer>
+</div>
