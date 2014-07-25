@@ -1,7 +1,7 @@
 package com.dd.bootstrap.components;
 
 import com.webobjects.appserver.WOContext;
-import com.webobjects.appserver.WORequest;
+import com.webobjects.appserver.WOResponse;
 
 public class BSEditorPartCollapsible extends BSComponent {
     
@@ -12,8 +12,8 @@ public class BSEditorPartCollapsible extends BSComponent {
     }
 	
 	@Override
-	public void takeValuesFromRequest(WORequest request, WOContext context) {
-		super.takeValuesFromRequest(request, context);
+	public void appendToResponse(WOResponse response, WOContext context) {
+		super.appendToResponse(response, context);
 		_collapsibleID = null;
 	}
 	
