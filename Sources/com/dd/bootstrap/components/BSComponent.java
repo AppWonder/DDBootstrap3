@@ -29,6 +29,7 @@ public class BSComponent extends ERXStatelessComponent {
 		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "js/bootstrap.min.js");
 		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "select2/select2.min.js");
 		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "select2/select2_main.js");
+		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "js/ddbootstrap3.js");
 	}
 
 	public BSComponent(WOContext context) {
