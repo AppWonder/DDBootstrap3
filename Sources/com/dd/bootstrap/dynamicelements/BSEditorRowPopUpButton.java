@@ -25,6 +25,7 @@ public class BSEditorRowPopUpButton extends WOPopUpButton {
 	@Override
 	public void appendToResponse(WOResponse response, WOContext context) {
 		BSDynamicElement.InjectCSSAndJS(response, context);
+		boolean hasChildElements = (childrenElements() != null && childrenElements().count() != 0);
 		
 		response.appendContentString("<div class=\"form-group\"><label class=\"col-sm-2 control-label\">");
 		if (_label != null && _label.valueInComponent(context.component()) != null) {
@@ -33,8 +34,31 @@ public class BSEditorRowPopUpButton extends WOPopUpButton {
 				response.appendContentString("*");
 			}
 		}
+		
 		response.appendContentString("</label><div class=\"col-sm-10\">");
+		
+		if (hasChildElements) {
+			response.appendContentString("<div class=\"input-group\">");
+		}
+		
 		super.appendToResponse(response, context);
+		
+		// component content, i guess
+		if (hasChildElements) {
+			response.appendContentString("<span class=\"input-group-addon\">");
+			context.appendZeroElementIDComponent();
+			for (WOElement element : childrenElements()) {
+				element.appendToResponse(response, context);
+				context.incrementLastElementIDComponent();
+			}
+			context.deleteLastElementIDComponent();
+			response.appendContentString("</span>");
+		}
+		
+		if (hasChildElements) {
+			response.appendContentString("</div>");
+		}
+		
 		response.appendContentString("</div></div>");
 	}
 	
