@@ -25,6 +25,7 @@ public class BSComponent extends ERXStatelessComponent {
 		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "css/bootstrap.custom.css");
 		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "select2/select2.css");
 		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "select2/select2-bootstrap.css");
+		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "css/btn-file.css");
 		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "js/jquery.min.js");
 		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "js/bootstrap.min.js");
 		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "select2/select2.min.js");
