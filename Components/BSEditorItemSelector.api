@@ -1,6 +1,21 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wodefinitions>
-        <wo wocomponentcontent="false" class="BSEditorItemSelector.java">
+        <wo class="BSEditorItemSelector.java" wocomponentcontent="false">
 
-        </wo>
+        <binding name="fragmentIdentifier"/>
+    <binding name="list"/>
+        <validation message="'list' is a required binding.">
+            <unbound name="list"/>
+        </validation>
+        <binding name="item"/>
+        <validation message="'item' is a required binding.">
+            <unbound name="item"/>
+        </validation>
+    <binding name="noSelectionString"/>
+    <binding name="selection"/>
+        <validation message="'selection' is a required binding.">
+            <unbound name="selection"/>
+        </validation>
+        <binding name="keyPath"/>
+    </wo>
 </wodefinitions>
