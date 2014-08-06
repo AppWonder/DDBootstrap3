@@ -23,6 +23,9 @@ public class BSComponent extends ERXStatelessComponent {
 	public static void InjectCSSAndJS(WOResponse response, WOContext context) {
 		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "css/bootstrap.min.css");
 		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "css/bootstrap.custom.css");
+		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "css/font-awesome.css");
+		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "css/docs.css");
+		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "css/bootstrap-social.css");
 		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "select2/select2.css");
 		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "select2/select2-bootstrap.css");
 		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "css/btn-file.css");
@@ -31,6 +34,7 @@ public class BSComponent extends ERXStatelessComponent {
 		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "select2/select2.min.js");
 		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "select2/select2_main.js");
 		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "js/ddbootstrap3.js");
+		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "js/docs.js");
 	}
 
 	public BSComponent(WOContext context) {

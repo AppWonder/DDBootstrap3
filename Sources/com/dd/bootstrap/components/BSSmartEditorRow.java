@@ -35,7 +35,7 @@ public class BSSmartEditorRow extends BSComponent {
     
     public String valueForAttributeKey(){
     	Object value = genericRecord().valueForKey(key());
-    		return ObjectUtils.toString(value);
+    	return ObjectUtils.toString(value);
 	}
 	
 	public void setValueForAttributeKey(Object value){
@@ -62,7 +62,8 @@ public class BSSmartEditorRow extends BSComponent {
 	}
 
 	public boolean showTextField() {
-		return attributeAsSimpleInput()&&(EOAttribute.AdaptorNumberType==attributeForAttributeKey().adaptorValueType()||attributeForAttributeKey().width()<=256);
+		return attributeAsSimpleInput()
+				&& (EOAttribute.AdaptorNumberType == attributeForAttributeKey().adaptorValueType() || attributeForAttributeKey().width() <= 256);
 	}
 	
 	public boolean showSmallTextArea() {
