@@ -1,0 +1,8 @@
+<table class="table">
+	<tr><wo:loop list="$headerColumns" item="$currentHeaderColumn">
+		<th><wo:str value="$displayStringForCurrentHeaderColumn" valueWhenEmpty="(null)" /></th></wo:loop>
+	</tr><wo:loop list="$^list" item="$^item">
+	<tr>
+		<wo:componentContent />
+	</tr></wo:loop>
+</table>

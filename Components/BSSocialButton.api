@@ -11,5 +11,6 @@
         <binding name="href"/>
     <binding name="target"/>
     <binding name="fragmentIdentifier"/>
+    <binding name="fullWidth"/>
     </wo>
 </wodefinitions>

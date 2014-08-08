@@ -42,6 +42,7 @@ public class BSSocialButton extends ERXHyperlink {
 	
 	private WOAssociation _asIcon;
 	private WOAssociation _type;
+	private WOAssociation _fullWidth;
 	
 	@SuppressWarnings("rawtypes")
 	public BSSocialButton(String tagname, NSDictionary nsdictionary, WOElement woelement) {
@@ -49,6 +50,7 @@ public class BSSocialButton extends ERXHyperlink {
 		
 		_asIcon = _associations.removeObjectForKey("asIcon");
 		_type = _associations.removeObjectForKey("type");
+		_fullWidth = _associations.removeObjectForKey("fullWidth");
 	}
 	
 	@Override
@@ -59,8 +61,12 @@ public class BSSocialButton extends ERXHyperlink {
 	
 	@Override
 	public void _appendClassAndIdToResponse(WOResponse response, WOContext context) {
-		StringBuilder className = new StringBuilder(asIconInContext(context) ? "btn btn-social-icon btn-" : "btn btn-block btn-social btn-");
+		StringBuilder className = new StringBuilder(booleanValueInContext(_asIcon, context) ? "btn btn-social-icon btn-" : "btn btn-social btn-");
 		className.append(typeInContext(context));
+		
+		if (booleanValueInContext(_fullWidth, context)) {
+			className.append(" ").append("btn-block");
+		}
 		
 		String otherClass = classInContext(context);
 		if (otherClass.length() > 0) {
@@ -94,8 +100,8 @@ public class BSSocialButton extends ERXHyperlink {
 		super.appendChildrenToResponse(aResponse, aContext);
 	}
 	
-	public boolean asIconInContext(WOContext context) {
-		return "true".equals(stringValueInContext(_asIcon, context).toLowerCase());
+	public boolean booleanValueInContext(WOAssociation association, WOContext context) {
+		return "true".equals(stringValueInContext(association, context).toLowerCase());
 	}
 	
 	public String typeInContext(WOContext context) {
