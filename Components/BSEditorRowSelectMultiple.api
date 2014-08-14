@@ -6,9 +6,7 @@
             <unbound name="list"/>
         </validation>
         <binding name="item"/>
-        <validation message="'item' is a required binding.">
-            <unbound name="item"/>
-        </validation>
+        
         <binding name="displayString"/>
     <binding name="disabled"/>
     <binding name="selections"/>

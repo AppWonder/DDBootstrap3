@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><wodefinitions>
+    <wo class="BSEditorRowTextField" wocomponentcontent="false">    <binding name="label"/>
+        <binding name="value"/>
+        <validation message="'value' is a required binding.">
+            <unbound name="value"/>
+        </validation>
+        <binding name="helpText"/>
+        <binding name="unit"/>
+    </wo>
+</wodefinitions>

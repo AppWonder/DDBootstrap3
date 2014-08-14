@@ -6,5 +6,9 @@
         </validation>
         <binding name="subtitle"/>
     <binding name="open"/>
+    <binding name="collapsibleId"/>
+        <validation message="'collapsibleId' is a required binding.">
+            <unbound name="collapsibleId"/>
+        </validation>
     </wo>
 </wodefinitions>
