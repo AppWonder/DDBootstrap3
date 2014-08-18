@@ -8,3 +8,12 @@
 	padding-top: 7px;
 	margin: 0;
 }
+
+/* color picker addition */
+div.input-group span.color-box {
+	display: inline-block;
+	border: 1px solid #000000;
+	width: 15px;
+	height: 15px;
+	padding: 0;
+}
