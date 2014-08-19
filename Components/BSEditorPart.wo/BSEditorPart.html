@@ -1,4 +1,4 @@
-<div class="container">
-<h3><wo:str value="$^title" /><wo:if condition="$^subtitle"> <small><wo:str value="$^subtitle" /></small></wo:if></h3>
+<wo:genericContainer elementName="div" class="container" omitTags="$^omitTags">
+<wo:genericContainer elementName="h3" omitTags="$^omitTags"><wo:str value="$^title" /><wo:if condition="$^subtitle"> <small><wo:str value="$^subtitle" /></small></wo:if></wo:genericContainer>
 <wo:componentContent />
-</div>
+</wo:genericContainer>

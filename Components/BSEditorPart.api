@@ -5,5 +5,6 @@
             <unbound name="title"/>
         </validation>
         <binding name="subtitle"/>
+    <binding name="omitTags"/>
     </wo>
 </wodefinitions>
