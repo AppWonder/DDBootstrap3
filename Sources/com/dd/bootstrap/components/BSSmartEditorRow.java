@@ -122,6 +122,7 @@ public class BSSmartEditorRow extends BSComponent {
 		return false;
 	}
 	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public NSArray popUpArray(){
 		 if(keyIsEnum()){
 			 try{
@@ -136,6 +137,7 @@ public class BSSmartEditorRow extends BSComponent {
 		 return null;
 	}
 	
+	@SuppressWarnings("rawtypes")
 	public String displayStringForCurrentSelectableItem(){
 		if(keyIsEnum()){
 			return ((Enum)currentSelectable).name();

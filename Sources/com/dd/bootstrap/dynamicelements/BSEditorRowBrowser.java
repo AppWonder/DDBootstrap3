@@ -5,7 +5,6 @@ import com.webobjects.appserver.WOAssociation;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOElement;
 import com.webobjects.appserver.WOResponse;
-import com.webobjects.appserver._private.WOPopUpButton;
 import com.webobjects.foundation.NSDictionary;
 
 public class BSEditorRowBrowser extends BSBrowser {

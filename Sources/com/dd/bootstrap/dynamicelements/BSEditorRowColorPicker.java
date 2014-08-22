@@ -16,6 +16,7 @@ public class BSEditorRowColorPicker extends ERXWOTextField {
 	private WOAssociation _helpText;	// String
 	private WOAssociation _myClass;
 
+	@SuppressWarnings("rawtypes")
 	public BSEditorRowColorPicker(String tagname, NSDictionary nsdictionary, WOElement woelement) {
 		super(tagname, nsdictionary, woelement);
 		

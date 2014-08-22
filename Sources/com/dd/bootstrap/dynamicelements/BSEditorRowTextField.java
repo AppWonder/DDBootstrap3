@@ -6,10 +6,7 @@ import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOElement;
 import com.webobjects.appserver.WOResponse;
 import com.webobjects.foundation.NSDictionary;
-import com.webobjects.foundation.NSLog;
 
-import er.extensions.appserver.ERXWOContext;
-import er.extensions.components._private.ERXSubmitButton;
 import er.extensions.components._private.ERXWOTextField;
 
 /**

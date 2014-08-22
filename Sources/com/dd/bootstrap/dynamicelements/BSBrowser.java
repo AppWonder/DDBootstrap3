@@ -7,13 +7,12 @@ import com.webobjects.appserver.WOElement;
 import com.webobjects.appserver.WOResponse;
 import com.webobjects.foundation.NSDictionary;
 
-import er.extensions.appserver.ERXApplication;
 import er.extensions.appserver.ERXResponseRewriter;
 import er.extensions.components._private.ERXWOBrowser;
-import er.extensions.foundation.ERXPatcher;
 
 public class BSBrowser extends ERXWOBrowser {
 
+	@SuppressWarnings("rawtypes")
 	public BSBrowser(String s, NSDictionary nsdictionary, WOElement woelement) {
 		super(s, nsdictionary, woelement);
 		BSDynamicElementsHelper.AppendCSS(_associations, this);

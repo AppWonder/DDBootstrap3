@@ -2,7 +2,6 @@ package com.dd.bootstrap.components;
 
 import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOResponse;
-import com.webobjects.appserver._private.WOComponentContent;
 
 import er.extensions.appserver.ERXResponseRewriter;
 import er.extensions.components.ERXStatelessComponent;
