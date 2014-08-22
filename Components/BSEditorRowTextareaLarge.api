@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="BSEditorRowTextareaLarge" wocomponentcontent="false">    <binding name="disabled"/>
+    <binding name="helpText"/>
+        <binding name="label"/>
+    <binding name="required"/>
+        <binding name="value"/>
+        <validation message="'value' is a required binding.">
+            <unbound name="value"/>
+        </validation>
+    </wo>
+</wodefinitions>

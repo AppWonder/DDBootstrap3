@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><wodefinitions>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
     <wo class="BSEditorRowTextField" wocomponentcontent="false">    <binding name="label"/>
         <binding name="value"/>
         <validation message="'value' is a required binding.">
@@ -6,5 +7,11 @@
         </validation>
         <binding name="helpText"/>
         <binding name="unit"/>
+    <binding name="formatter"/>
+        <binding name="dateformat"/>
+        <binding name="numberformat"/>
+        <binding name="useDecimalNumber"/>
+        <binding name="disabled"/>
+    <binding name="type"/>
     </wo>
 </wodefinitions>

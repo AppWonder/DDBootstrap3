@@ -4,5 +4,6 @@
         <binding name="enctype"/>
         <binding name="multipleSubmit"/>
         <binding name="fragmentIdentifier"/>
+    <binding name="href"/>
     </wo>
 </wodefinitions>

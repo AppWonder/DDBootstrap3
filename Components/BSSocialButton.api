@@ -12,5 +12,12 @@
     <binding name="target"/>
     <binding name="fragmentIdentifier"/>
     <binding name="fullWidth"/>
+    <binding name="pageName"/>
+        <binding name="directActionName"/>
+    <binding name="actionClass"/>
+    <binding name="string"/>
+    <binding name="disabled"/>
+    <binding name="secure"/>
+    <binding name="queryDictionary"/>
     </wo>
 </wodefinitions>

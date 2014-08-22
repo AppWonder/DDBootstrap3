@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><wodefinitions>
+    <wo class="BSTextField" wocomponentcontent="false">    <binding name="value"/>
+        <validation message="'value' is a required binding.">
+            <unbound name="value"/>
+        </validation>
+        <binding name="formatter"/>
+        <binding name="dateformat"/>
+        <binding name="numberformat"/>
+        <binding name="disabled"/>
+        <binding name="useDecimalNumber"/>
+    </wo>
+</wodefinitions>

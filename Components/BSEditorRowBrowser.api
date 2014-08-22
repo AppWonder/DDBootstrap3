@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wodefinitions>
-    <wo class="BSEditorRowSelectMultiple" wocomponentcontent="false">    <binding name="label"/>
-        <binding name="list"/>
+    <wo class="BSEditorRowBrowser" wocomponentcontent="false">    <binding name="label"/>
+    <binding name="required"/>
+    <binding name="list"/>
         <validation message="'list' is a required binding.">
             <unbound name="list"/>
         </validation>
         <binding name="item"/>
-        
         <binding name="displayString"/>
-    <binding name="disabled"/>
     <binding name="selections"/>
-        <validation message="'selections' is a required binding.">
+    <binding name="multiple"/>
+    <validation message="'selections' is a required binding.">
             <unbound name="selections"/>
         </validation>
-    <binding name="noSelectionString"/>
     </wo>
 </wodefinitions>
