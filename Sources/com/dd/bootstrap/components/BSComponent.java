@@ -29,14 +29,14 @@ public class BSComponent extends ERXStatelessComponent {
 		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "select2/select2.css");
 		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "select2/select2-bootstrap.css");
 		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "css/btn-file.css");
-		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "css/bootstrap-switch.css");
+		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "css/switchery.min.css");
 		ERXResponseRewriter.addStylesheetResourceInHead(response, context, FRAMEWORK_NAME, "css/bootstrap-colorpicker.css");
 		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "js/jquery.min.js");
 		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "js/bootstrap.min.js");
 		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "select2/select2.min.js");
 		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "select2/select2_main.js");
 		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "js/docs.js");
-		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "js/bootstrap-switch.min.js");
+		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "js/switchery.min.js");
 		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "js/bootstrap-colorpicker.min.js");
 		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "js/ddbootstrap3.js");
 	}

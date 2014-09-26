@@ -24,9 +24,6 @@ $(function() {
 		}
 	}
 	
-	$.fn.bootstrapSwitch.defaults.animate = false;
-	$('input[type=checkbox]').bootstrapSwitch();
-	
 	$('input.color-picker').colorpicker().on('changeColor', function() {
 		var ig = $(this).next('.input-group-addon');
 		var cb = $('span.color-box', ig);
@@ -37,5 +34,11 @@ $(function() {
 		var ig = $(this).next('.input-group-addon');
 		var cb = $('span.color-box', ig);
 		cb.css('background-color', this.value);
+	});
+	
+	var checkboxes = Array.prototype.slice.call(document.querySelectorAll('input[type="checkbox"]'));
+
+	checkboxes.forEach(function(ele) {
+  		var switchery = new Switchery(ele);
 	});
 });
