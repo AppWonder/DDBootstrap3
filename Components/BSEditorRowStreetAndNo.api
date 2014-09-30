@@ -9,5 +9,7 @@
             <unbound name="houseNo"/>
         </validation>
     <binding name="label"/>
+    <binding name="houseNoPlaceholder"/>
+    <binding name="streetPlaceholder"/>
     </wo>
 </wodefinitions>

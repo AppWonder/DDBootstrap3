@@ -13,5 +13,6 @@
         <binding name="useDecimalNumber"/>
         <binding name="disabled"/>
     <binding name="type"/>
+    <binding name="required"/>
     </wo>
 </wodefinitions>

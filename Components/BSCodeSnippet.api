@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+        <wo class="BSCodeSnippet.java" wocomponentcontent="true">
+
+        <binding name="showLineNumbers"/>
+    </wo>
+</wodefinitions>

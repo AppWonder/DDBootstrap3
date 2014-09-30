@@ -45,8 +45,13 @@ public class BSComponent extends ERXStatelessComponent {
 		super(context);
 	}
 	
+	protected void injectCustomHeadData(WOResponse response, WOContext context) {
+		
+	}
+	
 	public void appendToResponse(WOResponse response, WOContext context) {
 		BSComponent.InjectCSSAndJS(response, context);
+		injectCustomHeadData(response, context);
 		super.appendToResponse(response, context);
 	}
 

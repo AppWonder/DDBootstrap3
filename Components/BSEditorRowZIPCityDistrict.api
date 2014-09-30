@@ -13,5 +13,8 @@
         <validation message="'district' is a required binding.">
             <unbound name="district"/>
         </validation>
+    <binding name="zipPlaceholder"/>
+    <binding name="cityPlaceholder"/>
+    <binding name="districtPlaceholder"/>
     </wo>
 </wodefinitions>
