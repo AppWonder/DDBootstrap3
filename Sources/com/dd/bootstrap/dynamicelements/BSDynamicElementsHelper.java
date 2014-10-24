@@ -23,10 +23,10 @@ public class BSDynamicElementsHelper {
 		} else if (element instanceof BSEditorRowTextarea) {
 			associations.setObjectForKey(WOAssociation.associationWithValue("form-control"), "class");
 		} else if (element instanceof BSPopUpButton) {
-			associations.setObjectForKey(WOAssociation.associationWithValue("chosen-select"), "class");
+			associations.setObjectForKey(WOAssociation.associationWithValue("form-control"), "class");
 		}
 		else if (element instanceof BSBrowser) {
-			associations.setObjectForKey(WOAssociation.associationWithValue("chosen-select"), "class");
+			associations.setObjectForKey(WOAssociation.associationWithValue("form-control"), "class");
 		}
 	}
 	

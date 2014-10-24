@@ -1,6 +1,7 @@
 package com.dd.bootstrap.dynamicelements;
 
 import com.dd.bootstrap.components.BSComponent;
+import com.dd.bootstrap.components.BSDynamicElement;
 import com.webobjects.appserver.WOAssociation;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOElement;
@@ -22,6 +23,7 @@ public class BSCheckBox extends WOCheckBox {
 	}
 	
 	public void appendToResponse(WOResponse response, WOContext context) {
+		BSDynamicElement.InjectCSSAndJS(response, context);
 		ERXResponseRewriter.addStylesheetResourceInHead(response, context, BSComponent.FRAMEWORK_NAME, "css/bootstrap.min.css");
 		ERXResponseRewriter.addScriptResourceInHead(response, context, BSComponent.FRAMEWORK_NAME, "js/jquery.min.js");
 		ERXResponseRewriter.addScriptResourceInHead(response, context, BSComponent.FRAMEWORK_NAME, "js/bootstrap.min.js");
