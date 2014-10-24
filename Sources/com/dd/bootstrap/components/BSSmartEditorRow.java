@@ -12,6 +12,7 @@ import com.webobjects.appserver.WOContext;
 import com.webobjects.eoaccess.EOAttribute;
 import com.webobjects.eoaccess.EORelationship;
 import com.webobjects.eocontrol.EOFetchSpecification;
+import com.webobjects.eocontrol.EOGenericRecord;
 import com.webobjects.foundation.NSArray;
 import com.webobjects.foundation.NSForwardException;
 
@@ -33,13 +34,26 @@ public class BSSmartEditorRow extends BSComponent {
     	return (String)valueForBinding("key");
     }
     
-    public String valueForAttributeKey(){
+    
+    public Object valueForAttributeKey(){
     	Object value = genericRecord().valueForKey(key());
+    	if(value instanceof EOGenericRecord){
+    		return value;
+    	}
+    	if(keyIsEnum()){
+    		return value;
+    	}
     	return ObjectUtils.toString(value);
 	}
 	
 	public void setValueForAttributeKey(Object value){
-
+		if(keyIsToOneRelationship()||keyIsToManyRelationship()){
+			genericRecord().takeValueForKey(value, key());
+			return;
+		}
+		if(keyIsEnum()){
+			genericRecord().takeValueForKey(value, key());
+		}
 		try{
 			Object _value = value;
 			if(formatter() != null) {
