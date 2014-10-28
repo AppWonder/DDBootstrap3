@@ -16,6 +16,7 @@ import com.webobjects.eocontrol.EOGenericRecord;
 import com.webobjects.foundation.NSArray;
 import com.webobjects.foundation.NSForwardException;
 
+import er.extensions.eof.ERXEntityClassDescription;
 import er.extensions.eof.ERXGenericRecord;
 
 public class BSSmartEditorRow extends BSComponent {
@@ -41,6 +42,9 @@ public class BSSmartEditorRow extends BSComponent {
     		return value;
     	}
     	if(keyIsEnum()){
+    		return value;
+    	}
+    	if(keyIsToManyRelationship()){
     		return value;
     	}
     	return ObjectUtils.toString(value);
@@ -245,7 +249,10 @@ public class BSSmartEditorRow extends BSComponent {
 		this.currentSelectable = currentSelectable;
 	}
 	public String labelForAttributeKey(){
-		//TODO Use LocalizationManager
+		String localizedLabel = new ERXEntityClassDescription(genericRecord().entity()).displayNameForKey(key());
+		if(StringUtils.isNotBlank(localizedLabel)){
+			return localizedLabel;
+		}
 		return key();
 	}
 }
