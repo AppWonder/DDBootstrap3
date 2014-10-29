@@ -162,4 +162,14 @@ public class BSNavigationBar extends BSComponent {
 		return delegate;
 	}
 	
+	public static <T extends WOComponent> Item navigationItem(String label, Class<T> page){
+		final Class<T> aPage = page;
+		return new Item(label){	 
+			@Override
+			public WOActionResults action(WOContext context) {
+				return pageWithName(aPage, context);
+			}
+		};
+	}
+	
 }
