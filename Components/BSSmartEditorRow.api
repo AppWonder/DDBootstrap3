@@ -8,5 +8,6 @@
         </validation>
     <binding name="key"/>
     <binding name="selectableDisplayStringProvider"/>
+    <binding name="possibleSelectablesProvider"/>
     </wo>
 </wodefinitions>

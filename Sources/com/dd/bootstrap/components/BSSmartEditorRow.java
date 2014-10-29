@@ -8,6 +8,7 @@ import java.text.ParsePosition;
 import org.apache.commons.lang.ObjectUtils;
 import org.apache.commons.lang.StringUtils;
 
+import com.dd.bootstrap.components.smartEditorRowInterfaces.IBSPossibleSelectablesProvider;
 import com.dd.bootstrap.components.smartEditorRowInterfaces.IBSSelectableDisplayStringProvider;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.eoaccess.EOAttribute;
@@ -146,8 +147,19 @@ public class BSSmartEditorRow extends BSComponent {
 		return (IBSSelectableDisplayStringProvider)valueForBinding("selectableDisplayStringProvider");
 	}
 	
+	public IBSPossibleSelectablesProvider possibleSelectablesProvider(){
+		return (IBSPossibleSelectablesProvider)valueForBinding("possibleSelectablesProvider");
+	}
+	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public NSArray popUpArray(){
+		NSArray objects = null;
+		if(possibleSelectablesProvider()!=null){
+			objects = possibleSelectablesProvider().selectablesForKey(genericRecord(), key(), context());
+		}
+		if(objects != null){
+			return objects;
+		}
 		 if(keyIsEnum()){
 			 try{
 				 return new NSArray(Class.forName(attributeForAttributeKey().valueTypeClassName()).getEnumConstants());
@@ -165,7 +177,7 @@ public class BSSmartEditorRow extends BSComponent {
 	public String displayStringForCurrentSelectableItem(){
 		String aValue = null;
 		if(selectableDisplayStringProvider()!=null){
-			aValue = selectableDisplayStringProvider().displayString(currentSelectable);
+			aValue = selectableDisplayStringProvider().displayString(currentSelectable, context());
 		}
 		if(aValue!=null){
 			return aValue;
