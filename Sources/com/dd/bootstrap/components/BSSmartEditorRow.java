@@ -8,6 +8,7 @@ import java.text.ParsePosition;
 import org.apache.commons.lang.ObjectUtils;
 import org.apache.commons.lang.StringUtils;
 
+import com.dd.bootstrap.components.smartEditorRowInterfaces.IBSSelectableDisplayStringProvider;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.eoaccess.EOAttribute;
 import com.webobjects.eoaccess.EORelationship;
@@ -80,6 +81,7 @@ public class BSSmartEditorRow extends BSComponent {
 	}
 
 	public boolean showTextField() {
+		System.out.println("key: "+key());
 		return attributeAsSimpleInput()
 				&& (EOAttribute.AdaptorNumberType == attributeForAttributeKey().adaptorValueType() || attributeForAttributeKey().width() <= 256);
 	}
@@ -140,6 +142,10 @@ public class BSSmartEditorRow extends BSComponent {
 		return false;
 	}
 	
+	public IBSSelectableDisplayStringProvider selectableDisplayStringProvider(){
+		return (IBSSelectableDisplayStringProvider)valueForBinding("selectableDisplayStringProvider");
+	}
+	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public NSArray popUpArray(){
 		 if(keyIsEnum()){
@@ -157,6 +163,13 @@ public class BSSmartEditorRow extends BSComponent {
 	
 	@SuppressWarnings("rawtypes")
 	public String displayStringForCurrentSelectableItem(){
+		String aValue = null;
+		if(selectableDisplayStringProvider()!=null){
+			aValue = selectableDisplayStringProvider().displayString(currentSelectable);
+		}
+		if(aValue!=null){
+			return aValue;
+		}
 		if(keyIsEnum()){
 			return ((Enum)currentSelectable).name();
 		}
@@ -166,7 +179,7 @@ public class BSSmartEditorRow extends BSComponent {
 		return ObjectUtils.toString(currentSelectable);
 	}
 	
-	private static final Format UNSCALED_NUMBER_FORMATTER = new Format(){
+	public static final Format UNSCALED_NUMBER_FORMATTER = new Format(){
 
 																	@Override
 																	public StringBuffer format(Object obj, StringBuffer toAppendTo,
@@ -214,8 +227,9 @@ public class BSSmartEditorRow extends BSComponent {
 	public String possibleDisplayStringForCurrentSelectable(){
 		String currentFavoriteKey = ObjectUtils.toString(currentSelectable);
 		boolean hasFoundName = false;
-		for(String attributeKey : genericRecord().attributeKeys()){
-			EOAttribute attribute = genericRecord().entity().attributeNamed(attributeKey);
+		ERXGenericRecord selectableRecord = (ERXGenericRecord)currentSelectable();
+		for(String attributeKey : selectableRecord.attributeKeys()){
+			EOAttribute attribute = selectableRecord.entity().attributeNamed(attributeKey);
 			if(attribute.className()==String.class.getName()){
 				if(attributeKey.toLowerCase().contains("name")){
 					if(hasFoundName){

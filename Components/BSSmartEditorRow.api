@@ -7,5 +7,6 @@
             <unbound name="genericRecord"/>
         </validation>
     <binding name="key"/>
+    <binding name="selectableDisplayStringProvider"/>
     </wo>
 </wodefinitions>
