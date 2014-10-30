@@ -9,5 +9,7 @@
     <binding name="key"/>
     <binding name="selectableDisplayStringProvider"/>
     <binding name="possibleSelectablesProvider"/>
+    <binding name="unitStringProvider"/>
+    <binding name="helpTextProvider"/>
     </wo>
 </wodefinitions>

@@ -8,8 +8,11 @@ import java.text.ParsePosition;
 import org.apache.commons.lang.ObjectUtils;
 import org.apache.commons.lang.StringUtils;
 
+import com.dd.bootstrap.components.smartEditorRowInterfaces.IBSHelpTextProvider;
+import com.dd.bootstrap.components.smartEditorRowInterfaces.IBSLabelStringProvider;
 import com.dd.bootstrap.components.smartEditorRowInterfaces.IBSPossibleSelectablesProvider;
 import com.dd.bootstrap.components.smartEditorRowInterfaces.IBSSelectableDisplayStringProvider;
+import com.dd.bootstrap.components.smartEditorRowInterfaces.IBSUnitStringProvider;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.eoaccess.EOAttribute;
 import com.webobjects.eoaccess.EORelationship;
@@ -82,7 +85,6 @@ public class BSSmartEditorRow extends BSComponent {
 	}
 
 	public boolean showTextField() {
-		System.out.println("key: "+key());
 		return attributeAsSimpleInput()
 				&& (EOAttribute.AdaptorNumberType == attributeForAttributeKey().adaptorValueType() || attributeForAttributeKey().width() <= 256);
 	}
@@ -149,6 +151,10 @@ public class BSSmartEditorRow extends BSComponent {
 	
 	public IBSPossibleSelectablesProvider possibleSelectablesProvider(){
 		return (IBSPossibleSelectablesProvider)valueForBinding("possibleSelectablesProvider");
+	}
+	
+	public IBSLabelStringProvider labelStringProvider(){
+		return (IBSLabelStringProvider)valueForBinding("labelStringProvider");
 	}
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -275,10 +281,40 @@ public class BSSmartEditorRow extends BSComponent {
 		this.currentSelectable = currentSelectable;
 	}
 	public String labelForAttributeKey(){
+		String labelString = null;
+		if(labelStringProvider()!=null){
+			labelString = labelStringProvider().labelString(genericRecord(), key(), context());
+		}
+		if(labelString!=null){
+			return labelString;
+		}
 		String localizedLabel = new ERXEntityClassDescription(genericRecord().entity()).displayNameForKey(key());
 		if(StringUtils.isNotBlank(localizedLabel)){
 			return localizedLabel;
 		}
 		return key();
+	}
+
+
+	public IBSUnitStringProvider unitStringProvider(){
+		return (IBSUnitStringProvider)valueForBinding("unitStringProvider");
+	}
+	
+	public String unit() {
+		if(unitStringProvider()!=null){
+			return unitStringProvider().unitString(genericRecord(), key(), context());
+		}
+		return null;
+	}
+	
+	public IBSHelpTextProvider helpTextProvider(){
+		return (IBSHelpTextProvider)valueForBinding("helpTextProvider");
+	}
+	
+	public String helpText() {
+		if(helpTextProvider()!=null){
+			return helpTextProvider().helpText(genericRecord(), key(), context());
+		}
+		return null;
 	}
 }
