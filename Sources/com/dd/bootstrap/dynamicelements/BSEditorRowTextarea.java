@@ -25,9 +25,14 @@ public class BSEditorRowTextarea extends WOText {
 	private WOAssociation _label;		// String
 	private WOAssociation _required;	// boolean
 	private WOAssociation _helpText;	// String
+	private WOAssociation _myClass;
 	
 	public BSEditorRowTextarea(String aName, NSDictionary<String, WOAssociation> someAssociations, WOElement template) {
 		super(aName, someAssociations, template);
+		
+		_myClass = (WOAssociation) someAssociations.remove("class");
+		_class = null;
+		
 		BSDynamicElementsHelper.AppendCSS(_associations, this);
 		
 		_associations.setObjectForKey(WOAssociation.associationWithValue("3"), "rows");
@@ -35,6 +40,19 @@ public class BSEditorRowTextarea extends WOText {
 		_label = _associations.removeObjectForKey("label");
 		_required = _associations.removeObjectForKey("required");
 		_helpText = _associations.removeObjectForKey("helpText");
+	}
+	
+	@Override
+	public void appendAttributesToResponse(WOResponse response, WOContext context) {
+		super.appendAttributesToResponse(response, context);
+		
+		StringBuilder sb = new StringBuilder();
+		sb.append("form-control");
+		if (_myClass != null) {
+			sb.append(" ").append((String) _myClass.valueInComponent(context.component()));
+		}
+		response._appendTagAttributeAndValue("class", sb.toString(), false);
+		System.out.println(sb.toString());
 	}
 	
 	@Override
