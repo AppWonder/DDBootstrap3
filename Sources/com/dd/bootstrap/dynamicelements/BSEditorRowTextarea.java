@@ -52,7 +52,6 @@ public class BSEditorRowTextarea extends WOText {
 			sb.append(" ").append((String) _myClass.valueInComponent(context.component()));
 		}
 		response._appendTagAttributeAndValue("class", sb.toString(), false);
-		System.out.println(sb.toString());
 	}
 	
 	@Override
