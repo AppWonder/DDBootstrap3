@@ -281,7 +281,8 @@ public class BSSmartEditorRow extends BSComponent {
 		this.currentSelectable = currentSelectable;
 	}
 	public String labelForAttributeKey(){
-		String labelString = null;
+		String labelString = (String)valueForBinding("label");
+		
 		if(labelStringProvider()!=null){
 			labelString = labelStringProvider().labelString(genericRecord(), key(), context());
 		}
