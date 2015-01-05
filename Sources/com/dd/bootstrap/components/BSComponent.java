@@ -4,7 +4,7 @@ import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOResponse;
 
 import er.extensions.appserver.ERXResponseRewriter;
-import er.extensions.components.ERXStatelessComponent;
+import er.extensions.components.ERXComponent;
 
 /**
  * Basic state-less component. Injects the needed JS / CSS files for all components.
@@ -14,7 +14,7 @@ import er.extensions.components.ERXStatelessComponent;
  * @author robin
  *
  */
-public class BSComponent extends ERXStatelessComponent {
+public class BSComponent extends ERXComponent {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -39,6 +39,11 @@ public class BSComponent extends ERXStatelessComponent {
 		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "js/switchery.min.js");
 		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "js/bootstrap-colorpicker.min.js");
 		ERXResponseRewriter.addScriptResourceInHead(response, context, FRAMEWORK_NAME, "js/ddbootstrap3.js");
+	}
+	
+	@Override
+	public boolean synchronizesVariablesWithBindings() {
+		return false;
 	}
 
 	public BSComponent(WOContext context) {
