@@ -1,21 +1,21 @@
-			<wo:conditional condition = "$showTextField">
-				<wo:BSEditorRowTextField value="$valueForAttributeKey" label="$labelForAttributeKey" required="$isRequired" unit = "$unit" helpText = "$helpText" />
-			</wo:conditional>
-			<wo:conditional condition = "$showSmallTextArea">
-				<wo:BSEditorRowTextarea value="$valueForAttributeKey" label="$labelForAttributeKey" required="$isRequired"  helpText = "$helpText" />
-			</wo:conditional>
-			<wo:conditional condition = "$showMediumTextArea">
-				<wo:BSEditorRowTextareaMedium value="$valueForAttributeKey" label="$labelForAttributeKey" required="$isRequired"  helpText = "$helpText" />
-			</wo:conditional>
-			<wo:conditional condition = "$showLargeTextArea">
-				<wo:BSEditorRowTextareaLarge value="$valueForAttributeKey" label="$labelForAttributeKey" required="$isRequired"  helpText = "$helpText" />
-			</wo:conditional>
-			<wo:conditional condition = "$showXtraLargeTextArea">
-				<wo:BSEditorRowTextareaXtraLarge value="$valueForAttributeKey" label="$labelForAttributeKey" required="$isRequired"  helpText = "$helpText" />
-			</wo:conditional>
-			<wo:conditional condition = "$showPopUpButton">
-				<wo:BSEditorRowPopUpButton selection="$valueForAttributeKey" list="$popUpArray" item="$currentSelectable" label="$labelForAttributeKey" displayString="$displayStringForCurrentSelectableItem" noSelectionString="--Bitte wählen--" required="$isRequired"  helpText = "$helpText" />
-			</wo:conditional>
-			<wo:conditional condition = "$showMultipleSelect">
-				<wo:BSEditorRowSelectMultiple selections="$valueForAttributeKey" list="$popUpArray" item="$currentSelectable" label="$labelForAttributeKey" displayString="$displayStringForCurrentSelectableItem" required="$isRequired"  helpText = "$helpText" />
-			</wo:conditional>
+<wo:conditional condition = "$showTextField">
+	<wo:BSEditorRowTextField value="$valueForAttributeKey" label="$labelForAttributeKey" required="$isRequired" unit = "$unit" helpText = "$helpText" class="$^class" />
+</wo:conditional>
+<wo:conditional condition = "$showSmallTextArea">
+	<wo:BSEditorRowTextarea value="$valueForAttributeKey" label="$labelForAttributeKey" required="$isRequired"  helpText = "$helpText" class="$^class" />
+</wo:conditional>
+<wo:conditional condition = "$showMediumTextArea">
+	<wo:BSEditorRowTextareaMedium value="$valueForAttributeKey" label="$labelForAttributeKey" required="$isRequired"  helpText = "$helpText" class="$^class" />
+</wo:conditional>
+<wo:conditional condition = "$showLargeTextArea">
+	<wo:BSEditorRowTextareaLarge value="$valueForAttributeKey" label="$labelForAttributeKey" required="$isRequired"  helpText = "$helpText" class="$^class" />
+</wo:conditional>
+<wo:conditional condition = "$showXtraLargeTextArea">
+	<wo:BSEditorRowTextareaXtraLarge value="$valueForAttributeKey" label="$labelForAttributeKey" required="$isRequired"  helpText = "$helpText" class="$^class" />
+</wo:conditional>
+<wo:conditional condition = "$showPopUpButton">
+	<wo:BSEditorRowPopUpButton selection="$valueForAttributeKey" list="$popUpArray" item="$currentSelectable" label="$labelForAttributeKey" displayString="$displayStringForCurrentSelectableItem" noSelectionString="--Bitte wählen--" required="$isRequired"  helpText = "$helpText" class="$^class" />
+</wo:conditional>
+<wo:conditional condition = "$showMultipleSelect">
+	<wo:BSEditorRowSelectMultiple selections="$valueForAttributeKey" list="$popUpArray" item="$currentSelectable" label="$labelForAttributeKey" displayString="$displayStringForCurrentSelectableItem" required="$isRequired"  helpText = "$helpText" class="$^class" />
+</wo:conditional>

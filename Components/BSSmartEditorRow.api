@@ -11,5 +11,6 @@
     <binding name="possibleSelectablesProvider"/>
     <binding name="unitStringProvider"/>
     <binding name="helpTextProvider"/>
+    <binding name="class"/>
     </wo>
 </wodefinitions>

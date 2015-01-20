@@ -55,9 +55,9 @@ public class BSComponent extends ERXComponent {
 	}
 	
 	public void appendToResponse(WOResponse response, WOContext context) {
+		super.appendToResponse(response, context);
 		BSComponent.InjectCSSAndJS(response, context);
 		injectCustomHeadData(response, context);
-		super.appendToResponse(response, context);
 	}
 
 }

@@ -5,7 +5,6 @@ jQuery(document).ready(function() {
 			var select = state.element[0].parentNode;
 			var formatType = select.getAttribute('data-format-type');
 			if (formatType == 'image') {
-				console.log(state);
 				var formatVar = select.getAttribute('data-format-var');
 				var urls = window[formatVar];
 				return formatImage(state, urls);
