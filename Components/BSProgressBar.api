@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="BSProgressBar" wocomponentcontent="false">    <binding name="progress"/>
+        <validation message="'progress' is a required binding.">
+            <unbound name="progress"/>
+        </validation>
+    <binding name="type"/>
+    <binding name="striped"/>
+    </wo>
+</wodefinitions>

@@ -1,0 +1,28 @@
+<wo:genericContainer elementName = "div" id="$carouselId" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators"><wo:repetition list="$list" item = "$item" index = "$currentIndex">
+	<wo:if condition = "$isFirst"><wo:genericContainer elementName = "li" data-target="$dataTarget" data-slide-to="0" class="active"></wo:genericContainer>
+    </wo:if><wo:else>
+    <wo:genericContainer elementName = "li" data-target="$dataTarget" data-slide-to="$currentIndex"></wo:genericContainer></wo:else></wo:repetition>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox"><wo:repetition list="$list" item = "$item">
+    <wo:genericContainer elementName = "div" class="$itemClass">
+      <wo:componentContent />
+      <div class="carousel-caption">
+       <wo:string value = "$caption" />
+      </div>
+    </wo:genericContainer></wo:repetition>
+  </div>
+
+  <!-- Controls -->
+   <wo:genericContainer elementName = "a" class="left carousel-control" href="$dataTarget" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </wo:genericContainer>
+  <wo:genericContainer elementName = "a" class="right carousel-control" href="$dataTarget" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </wo:genericContainer>
+</wo:genericContainer>
