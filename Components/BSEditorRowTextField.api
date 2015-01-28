@@ -13,6 +13,16 @@
         <binding name="useDecimalNumber"/>
         <binding name="disabled"/>
     <binding name="type"/>
-    <binding name="required"/>
+    <binding defaults="Boolean" name="required"/>
+    <binding name="requiredtype"/>
+        <binding name="requiredminlength"/>
+        <binding name="requiredmaxlength"/>
+        <binding name="requiredlength"/>
+        <binding name="requiredmin"/>
+        <binding name="requiredmax"/>
+        <binding name="requiredrange"/>
+        <binding name="requiredpattern"/>
+        <binding name="requiredequaltoid"/>
+        <binding name="requiredequaltofunction"/>
     </wo>
 </wodefinitions>

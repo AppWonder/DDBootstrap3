@@ -1,11 +1,13 @@
 package com.dd.bootstrap.dynamicelements;
 
 import com.dd.bootstrap.components.BSDynamicElement;
+import com.dd.bootstrap.utils.ClientValidationSupport;
 import com.webobjects.appserver.WOAssociation;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOElement;
 import com.webobjects.appserver.WOResponse;
 import com.webobjects.foundation.NSDictionary;
+import com.webobjects.foundation.NSMutableDictionary;
 
 import er.extensions.components._private.ERXWOTextField;
 
@@ -29,11 +31,12 @@ public class BSEditorRowTextField extends ERXWOTextField {
 	private WOAssociation _helpText;	// String
 	private WOAssociation _unit;		// String
 	private WOAssociation _myClass;
+	private NSMutableDictionary<String,WOAssociation> _associationsBackup;
 	
 	@SuppressWarnings("rawtypes")
 	public BSEditorRowTextField(String tagname, NSDictionary nsdictionary, WOElement woelement) {
 		super(tagname, nsdictionary, woelement);
-		
+		_associationsBackup = nsdictionary.mutableClone();
 		_myClass = (WOAssociation) nsdictionary.remove("class");
 		_class = null;
 		
@@ -55,6 +58,7 @@ public class BSEditorRowTextField extends ERXWOTextField {
 			sb.append(" ").append((String) _myClass.valueInComponent(context.component()));
 		}
 		response._appendTagAttributeAndValue("class", sb.toString(), false);
+		ClientValidationSupport.appendValidiationBindings(_associationsBackup, response, context);
 	}
 	
 	@Override
@@ -92,6 +96,9 @@ public class BSEditorRowTextField extends ERXWOTextField {
 		response.appendContentString("</div></div>");
 	}
 
+	public boolean requiresValidation(WOContext aContext){
+		return ClientValidationSupport.requiresValidation(_associationsBackup, aContext);
+	}
 	
 	
 }
