@@ -4,9 +4,11 @@ import com.dd.bootstrap.components.BSDynamicElement;
 import com.webobjects.appserver.WOAssociation;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOElement;
+import com.webobjects.appserver.WORequest;
 import com.webobjects.appserver.WOResponse;
 import com.webobjects.appserver._private.WOFileUpload;
 import com.webobjects.foundation.NSDictionary;
+import com.webobjects.foundation.NSLog;
 
 public class BSFileUpload extends WOFileUpload {
 	
@@ -34,6 +36,20 @@ public class BSFileUpload extends WOFileUpload {
 		aResponse.appendContentString("</span>");
 	}
 	
+	@Override
+	public void takeValuesFromRequest(WORequest aRequest, WOContext aContext) {
+		if (canTakeValue(aContext)) {
+			try {
+				super.takeValuesFromRequest(aRequest, aContext);
+			} catch (Exception e) {
+				NSLog.err.appendln(e);
+			}
+		}
+		
+	}
 	
-	
+	private boolean canTakeValue(WOContext context) {
+		return (context.elementID().startsWith(context.senderID()) && context.isInForm());
+	}
+
 }
