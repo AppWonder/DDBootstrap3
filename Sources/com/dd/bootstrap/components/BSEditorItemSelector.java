@@ -33,7 +33,6 @@ public class BSEditorItemSelector extends BSComponent {
 		if(valueForBinding("selection")==null){
 			return null;
 		}
-		System.out.println(valueForBinding("selection"));
 		if(valueForBinding("selection") instanceof NSKeyValueCodingAdditions){
 			Object displayedValue = ((NSKeyValueCodingAdditions)valueForBinding("selection")).valueForKeyPath((String)valueForBinding("keyPath"));
 			if(displayedValue!=null){
