@@ -38,6 +38,7 @@ public class BSNavigationBar extends BSComponent {
 		public NSMutableArray<Item> childItems = new NSMutableArray<Item>();
 		public Item() {}
 		public Item(String title) { this.title = title; }
+		public Item(String title, Object tag) { this.title = title; this.tag = tag; }
 		public WOActionResults action(WOContext context) { return null; }
 		public String href;
 		public String hrefTarget;
@@ -164,7 +165,7 @@ public class BSNavigationBar extends BSComponent {
 	
 	public static <T extends WOComponent> Item navigationItem(String label, Class<T> page){
 		final Class<T> aPage = page;
-		return new Item(label){	 
+		return new Item(label, page) {	 
 			@Override
 			public WOActionResults action(WOContext context) {
 				return pageWithName(aPage, context);
