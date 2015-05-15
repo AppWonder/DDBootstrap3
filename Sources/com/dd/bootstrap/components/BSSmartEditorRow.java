@@ -40,6 +40,9 @@ public class BSSmartEditorRow extends BSComponent {
     	return (String)valueForBinding("key");
     }
     
+    public String noSelectionString() {
+    	return stringValueForBinding("noSelectionString", "- Bitte wählen -");
+    }
     
     public Object valueForAttributeKey(){
     	Object value = genericRecord().valueForKey(key());

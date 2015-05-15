@@ -14,7 +14,7 @@
 	<wo:BSEditorRowTextareaXtraLarge value="$valueForAttributeKey" label="$labelForAttributeKey" required="$isRequired"  helpText = "$helpText" class="$^class" />
 </wo:conditional>
 <wo:conditional condition = "$showPopUpButton">
-	<wo:BSEditorRowPopUpButton selection="$valueForAttributeKey" list="$popUpArray" item="$currentSelectable" label="$labelForAttributeKey" displayString="$displayStringForCurrentSelectableItem" noSelectionString="--Bitte wählen--" required="$isRequired"  helpText = "$helpText" class="$^class" />
+	<wo:BSEditorRowPopUpButton selection="$valueForAttributeKey" list="$popUpArray" item="$currentSelectable" label="$labelForAttributeKey" displayString="$displayStringForCurrentSelectableItem" noSelectionString="$noSelectionString" required="$isRequired"  helpText = "$helpText" class="$^class" />
 </wo:conditional>
 <wo:conditional condition = "$showMultipleSelect">
 	<wo:BSEditorRowSelectMultiple selections="$valueForAttributeKey" list="$popUpArray" item="$currentSelectable" label="$labelForAttributeKey" displayString="$displayStringForCurrentSelectableItem" required="$isRequired"  helpText = "$helpText" class="$^class" />
