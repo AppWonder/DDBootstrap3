@@ -8,21 +8,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </wo:genericContainer>
-      <wo:link action="$selectDefaultItem" class="navbar-brand"><wo:str value="$^defaultItem.title" valueWhenEmpty="Brand" /></wo:link>
+      <wo:link action="$selectDefaultItem" class="navbar-brand"><wo:BSGlyphicon glyphicon = "$configuration.defaultItem.glyphicon" /> <wo:str value="$configuration.defaultItem.title" valueWhenEmpty="Brand" /></wo:link>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <wo:genericContainer elementName="div" class="collapse navbar-collapse" id="$navbarElementID">
       <ul class="nav navbar-nav">
         <!-- <li class="active"><a href="#">Link</a></li>-->
-        <wo:loop list="$^list" item="$^item"><wo:genericContainer elementName="li" class="$cssClassLiItem">
+        <wo:loop list="$configuration.items" item="$^item"><wo:genericContainer elementName="li" class="$cssClassLiItem">
         	<wo:if condition="$^item.hasChildItems" negate="$true">
-        		<wo:if condition="$^item.hasHref"><wo:link href="$^item.href" target="$^item.hrefTarget"><wo:str value="$^item.title" valueWhenEmpty="null" /></wo:link></wo:if><wo:else><wo:link action="$selectItem" target="$^item.hrefTarget"><wo:str value="$^item.title" valueWhenEmpty="null" /></wo:link></wo:else>
+        		<wo:if condition="$^item.hasHref"><wo:link href="$^item.href" target="$^item.hrefTarget"><wo:BSGlyphicon glyphicon = "$^item.glyphicon" /><wo:str value="$^item.title" valueWhenEmpty="null" /></wo:link></wo:if><wo:else><wo:link action="$selectItem" target="$^item.hrefTarget"><wo:BSGlyphicon glyphicon = "$^item.glyphicon" /><wo:str value="$^item.title" valueWhenEmpty="null" /></wo:link></wo:else>
         	</wo:if><wo:else>
-        		<a href="#" class="dropdown-toggle" data-toggle="dropdown"><wo:str value="$^item.title" valueWhenEmpty="null" /> <span class="caret"></span></a>
+        		<a href="#" class="dropdown-toggle" data-toggle="dropdown"><wo:BSGlyphicon glyphicon = "$^item.glyphicon" /><wo:str value="$^item.title" valueWhenEmpty="null" /> <span class="caret"></span></a>
         		<ul class="dropdown-menu" role="menu">
         			<wo:loop list="$^item.childItems" item="$^item"><wo:genericContainer elementName="li" class="$cssClassLiItem">
-        				<wo:if condition="$^item.hasHref"><wo:link href="$^item.href" target="$^item.hrefTarget"><wo:str value="$^item.title" valueWhenEmpty="null" /></wo:link></wo:if><wo:else><wo:link action="$selectItem" target="$^item.hrefTarget"><wo:str value="$^item.title" valueWhenEmpty="null" /></wo:link></wo:else>
+        				<wo:if condition="$^item.hasHref"><wo:link href="$^item.href" target="$^item.hrefTarget"><wo:BSGlyphicon glyphicon = "$^item.glyphicon" /><wo:str value="$^item.title" valueWhenEmpty="null" /></wo:link></wo:if><wo:else><wo:link action="$selectItem" target="$^item.hrefTarget"><wo:BSGlyphicon glyphicon = "$^item.glyphicon" /><wo:str value="$^item.title" valueWhenEmpty="null" /></wo:link></wo:else>
         			</wo:genericContainer></wo:loop>
 		        </ul>
         	</wo:else>
