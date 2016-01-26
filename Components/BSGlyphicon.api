@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="BSBrowser" wocomponentcontent="false">    
+        
+        
+        
+        
+        
+    
+    <binding name="glyphiconName"/>
+        <binding name="glyphicon"/>
+        <binding name="color"/>
+    </wo>
+</wodefinitions>
